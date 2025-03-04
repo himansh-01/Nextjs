@@ -1,24 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap");
 @import "tailwindcss";
 
-@theme {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@layer base {
+    :root {
+        --radius: 0.5rem;
+    }
+}
+
+@layer utilities {
+    .flex-between {
+        @apply flex justify-between items-center;
+    }
+
+    .text-30-extrabold {
+        @apply text-[30px] font-extrabold text-white;
+    }
+
+    .text-30-bold {
+        @apply text-[30px] font-bold text-black;
+    }
+
+    .text-30-semibold {
+        @apply font-semibold text-[30px] text-black;
+    }
+
+    .text-26-semibold {
+        @apply font-semibold text-[26px] text-black;
+    }
+
+    .text-24-black {
+        @apply text-[24px] font-black text-black;
+    }
+
+    .text-20-medium {
+        @apply font-medium text-[20px] text-black;
+    }
+
+    .text-16-medium {
+        @apply font-medium text-[16px] text-black;
+    }
+
+    .text-14-normal {
+        @apply font-normal text-sm text-white/80;
+    }
+
+    .pink_container {
+        @apply w-full bg-primary min-h-[530px] flex justify-center items-center flex-col py-10 px-6;
+    }
+
+    .tag {
+        @apply bg-secondary px-6 py-3 font-sans font-bold rounded-sm uppercase relative;
+    }
+
+    .heading {
+        @apply uppercase bg-black px-6 py-3 font-sans font-extrabold text-white sm:text-[54px] sm:leading-[64px] text-[36px] leading-[46px] max-w-5xl text-center my-5;
+    }
+
+    .sub-heading {
+        @apply font-medium text-[20px] text-white max-w-2xl text-center;
+    }
+
+    .section_container {
+        @apply px-6 py-10 max-w-7xl mx-auto;
+    }
+
+    .card_grid {
+        @apply grid md:grid-cols-3 sm:grid-cols-2 gap-5;
+    }
+
+    .no-result {
+        @apply text-black text-sm font-normal;
+    }
+
+    .profile_container {
+        @apply w-full pb-10 pt-20 px-6 max-w-7xl mx-auto lg:flex-row flex-col flex gap-10;
+    }
+
+    .profile_card {
+        @apply w-80 px-6 pb-6 pt-20 flex flex-col justify-center items-center bg-primary border-[5px] border-black shadow-lg rounded-[30px] relative z-0 h-fit max-lg:w-full;
+    }
+
+    .profile_image {
+        @apply rounded-full object-cover border-[3px] border-black;
+    }
+
+    .divider {
+        @apply border-dotted bg-gray-400 max-w-4xl my-10 mx-auto;
+    }
+
+    .search-form {
+        @apply max-w-3xl w-full min-h-[80px] bg-white border-[5px] border-black rounded-[80px] text-[24px] mt-8 px-5 flex flex-row items-center gap-5;
+    }
+
+    .search-input {
+        @apply flex-1 font-bold placeholder:font-semibold placeholder:text-black w-full h-auto outline-none;
+    }
+
+    .search-btn {
+        @apply w-[50px] h-[50px] rounded-full bg-black flex justify-center items-center;
+    }
+
+    .startup-form {
+        @apply max-w-2xl mx-auto bg-white my-10 space-y-8 px-6;
+    }
+
+    .startup-form_input {
+        @apply border-[3px] border-black px-5 py-7 text-[18px] text-black font-semibold rounded-full mt-3 placeholder:text-gray-500;
+    }
+}
+
+.w-md-editor-toolbar {
+    padding: 10px;
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #1a1a1a;
+    --primary: #3b82f6;
+    --secondary: #ef4444;
+    --muted: #6b7280;
+    --radius: 0.625rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.dark {
+    --background: #1a1a1a;
+    --foreground: #ffffff;
+    --primary: #60a5fa;
+    --secondary: #f87171;
+    --muted: #9ca3af;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-none;
   }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  
+  body {
+    @apply bg-background text-foreground;
+  }
 }
